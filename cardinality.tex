@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsthm,amsmath}
+\usepackage{amssymb}
+\begin{document}
+\begin{flushleft}
+	$\left|\mathbb{Q}\right|=\left|\mathbb{N}\right|$
+\end{flushleft}
+\begin{proof}
+	~\\
+	\linespread{1.5}
+	First prove that $\left|\{q:q\in\mathbb{Q},q>0\}\right|=\left|\mathbb{N}\right|$\\
+	$1)\ q\in\mathbb{N}\ and\ q>1\\$
+	There exists a series of unique prime numbers $p_{1}...p_{n}$ and exponents $r_{1}...r_{n}$ such that \[q=p_{1}^{r_{1}}...p_{n}^{r_{n}}\]
+	$2)\ q\notin\mathbb{N}\ and\ q>1\\$
+	There exists a series of unique prime numbers $p_{1}...p_{n},q_{1}...q_{m}$ and exponents $r_{1}...r_{n},s_{1}...s_{m}$ such that \[q=\frac{p_{1}^{r_{1}}...p_{n}^{r_{n}}}{q_{1}^{s_{1}}...q_{m}^{s_{m}}}\]
+	Define $f:\{q\in\mathbb{Q},q>0\}\rightarrow\mathbb{N}$\\ $f(1)=1$ , $f(q)=p_{1}^{2r_{1}}...p_{n}^{2r_{n}}$ if $q\in\mathbb{N}\backslash\{1\}$ and \\$f(q)=p_{1}^{2r_{1}}...p_{n}^{2r_{n}}q_{1}^{2s_{1}-1}...q_{m}^{2s_{m}-1}$ if $q\in\mathbb{Q}\backslash\mathbb{N}$.\\
+	For injection, $f(q_{1})=f(q_{2})\Rightarrow q_{1}=q_{2}$ since $f$ is unique.\\
+	For surjection, $\forall m=p_{1}^{r_{1}}...p_{n}^{r_{n}}q_{1}^{s^{1}}...q_{m}^{s_{m}}\in\mathbb{N}$\\
+	Without loss of generality, suppose that $r_{1},...,r_{n}$ are positive even numbers, while $s_{1},...,s_{n}$ are positive odd numbers. \\
+	Thus, $\exists q\in\mathbb{Q}$ such that $f(q=\frac{p_{1}^{r_{1}/2}...p_{n}^{r_{n}/2}}{q_{1}^{(s^{1}+1)/2}...q_{m}^{(s_{m}+1)/2}})=m$\\
+	Thus, $f$ is a bijection.\\
+	According to symmetry, $g:\{q\in\mathbb{Q},q<0\}\rightarrow\mathbb{N}$ is also a bijection.\\
+	Define $h:\mathbb{Q}\rightarrow\mathbb{Z}$ by 
+		$h(x)=\begin{cases}
+			0 ,\ if\ x=0\\
+			f(x) ,\ if\ x>0\\
+			g(x) ,\ if\ x<0
+		\end{cases}$\\
+	Thus $h$ is a bijection.\\
+	Thus, $\left|\mathbb{Q}\right|=\left|\mathbb{Z}\right|\Rightarrow\left|\mathbb{Q}\right|=\left|\mathbb{N}\right|$
+	
+	
+\end{proof}
+\end{document}
